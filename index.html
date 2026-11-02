@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaneli &amp; Korppu Bakery - DOM examples</title>
+  <!-- The looks are in a separate file, so the HTML has only the structure and the JavaScript only chooses class names -->
+  <link rel="stylesheet" href="bakery-dom.css">
+  
+</head>
+<body>
+  <h1>Kaneli Bakery</h1>
+
+  <!-- BOM: the pop-up windows alert, confirm and prompt are shown by the browser when the page loads (see the end of bakery-dom.js).
+       The answers are written into these two paragraphs with innerText -->
+  <h2>Welcome</h2>
+  <p id="greeting">Welcome to the bakery.</p>
+  <p id="bomResult"></p>
+
+  <!-- 6. Change the value of an attribute
+       Both images start with an empty src. JavaScript sets src and alt:
+       the first image with the property (logo.src), the second with setAttribute() -->
+  <h2>Logos (attributes)</h2>
+  <img id="logo" src="" alt="Old logo">
+  <img id="logo2" src="" alt="New logo">
+
+  <!-- 1. getElementById and getElementsByTagName
+       JavaScript selects the div with the id "news", then the p-elements inside it.
+       The number of p-elements is written into the span with the id "newsCount" -->
+  <h2>News</h2>
+  <div id="news">
+    <p>The bakery is open on Sundays now.</p>
+    <p>New sourdough recipe on the menu.</p>
+    <p>Order cakes two days ahead.</p>
+  </div>
+  <p>Number of news items: <span id="newsCount"></span></p>
+
+  <!-- 1b. Key functions
+       JavaScript adds a new paragraph to #keyDemo with createElement and appendChild,
+       removes the old one with removeChild, and writes a summary into #keyInfo -->
+  <h3>Key functions</h3>
+  <!-- Two elements with the class "button", so that document.querySelectorAll('.button') finds them -->
+  <button class="button">Order now</button>
+  <button class="button">See the menu</button>
+  <div id="keyDemo">
+    <p id="keyOld">This paragraph is removed by JavaScript.</p>
+  </div>
+  <p id="keyInfo"></p>
+
+  <!-- 2. Select the second item of the list: the second li gets the class "sale"
+       3. Go through all the li elements: each item is made bold with innerHTML -->
+  <h2>Menu</h2>
+  <ul id="menuList">
+    <li>Rye bread</li>
+    <li>Cinnamon bun</li>
+    <li>Karelian pasty</li>
+  </ul>
+
+  <!-- 4. All p-elements with the class "bulletin"
+       The selector p.bulletin finds only these two. The class "sign" is only for the look -->
+  <h2>Bulletins</h2>
+  <p class="sign bulletin">Free coffee with every bun on Friday.</p>
+  <p class="sign bulletin">Closed on Midsummer Eve.</p>
+
+  <!-- 5. Change the content of an element
+       innerHTML replaces everything inside this p, including the span -->
+  <h2>Opening hours</h2>
+  <p id="hours"><span class="closed">Closed</span></p>
+
+  <!-- 7. Adding HTML to the document in two ways. Both divs are empty at first.
+       A) specialA is filled with innerHTML (one string)
+       B) specialB is filled with createElement, createTextNode and appendChild -->
+  <h2>Today's special</h2>
+  <div id="specialA"></div>
+  <div id="specialB"></div>
+  <p><small>Photo: magnific on Magnific (free photo)</small></p>
+
+  <!-- 8. CSS handling
+       styleSign: has an inline style attribute, which JavaScript replaces completely
+       toggleSign: JavaScript toggles the class "sale" on and off
+       replaceSign: JavaScript replaces the class "fresh" with "soldout" -->
+  <h2>Signs (CSS handling)</h2>
+  <p class="sign" style="background-color: #fff3d6; padding: 1rem;" id="styleSign">Cinnamon buns, fresh from the oven</p>
+  <p class="sign fresh" id="toggleSign">Rye bread, fresh from the oven</p>
+  <p class="sign fresh" id="replaceSign">Berry tart, fresh from the oven</p>
+  <script src="bakery-dom-2.js"></script>
+  <!-- The script is at the end of the body, so all the elements above exist when the code runs -->
+
+</body>
+</html>

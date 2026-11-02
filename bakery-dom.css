@@ -1,0 +1,18 @@
+/* bakery-dom.css - the looks of the page.
+   JavaScript (bakery-dom.js) does not write colours or sizes. It only chooses the class names below
+   with classList.add, classList.toggle and classList.replace (section 8, CSS handling) */
+
+body { font-family: Georgia, serif; background: #fff8ef; color: #3b2a20; max-width: 800px; margin: 0 auto; padding: 1rem; }
+img { display: block; margin-bottom: .5rem; }
+#logo, #logo2 { width: 160px; height: auto; max-width: 100%; }
+/* The photos in section 7 are big, so they are shown 320 pixels wide */
+#specialA img, #specialB img { width: 320px; max-width: 100%; }
+
+/* Classes used by the JavaScript. Each one describes a whole look.
+   JavaScript only chooses the class name (classList.add, toggle, replace) */
+.sign    { padding: 1rem; border: 1px solid #999; margin-bottom: 1rem; }
+.fresh   { background-color: #fff3d6; color: #5a3a1a; }
+.sale    { background-color: #d8f0d2; color: #1e5a1e; }
+.soldout { background-color: #eeeeee; color: #888888; text-decoration: line-through; }
+.open    { color: #1e7a1e; font-weight: bold; }
+.closed  { color: #b02020; font-weight: bold; }
